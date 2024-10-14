@@ -12,8 +12,6 @@
     "ios-clean": "cd ios && rm -rf build && xcodebuild clean && pod update && cd .. && npm run ios"
   },
   "dependencies": {
-    "react": "18.3.1",
-    "react-native": "0.75.4",
     "@react-native-camera-roll/camera-roll": "^7.8.1",
     "@react-native-community/masked-view": "^0.1.11",
     "@react-native-community/netinfo": "^9.5.0",
@@ -27,11 +25,12 @@
     "jwt-decode": "^4.0.0",
     "loadash": "^1.0.0",
     "lottie-react-native": "^6.6.0",
+    "react": "18.3.1",
+    "react-native": "0.75.4",
     "react-native-actions-sheet": "^0.9.3",
     "react-native-collapsible-tab-view": "^7.0.1",
     "react-native-create-thumbnail": "^2.0.0",
     "react-native-fast-image": "^8.6.3",
-    "react-native-fbsdk": "^3.0.0",
     "react-native-gesture-handler": "^2.16.1",
     "react-native-image-picker": "^7.1.2",
     "react-native-keyboard-aware-scroll-view": "^0.9.5",
