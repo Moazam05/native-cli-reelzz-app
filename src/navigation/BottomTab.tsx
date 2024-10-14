@@ -7,6 +7,7 @@ import {RFValue} from 'react-native-responsive-fontsize';
 import {Colors} from '../constants/Colors';
 import {HomeTabIcon, ProfileTabIcon} from './TabIcon';
 import {bottomBarStyles} from '../styles/NavigationBarStyles';
+import {navigate} from '../utils/NavigationUtils';
 
 const Tab = createBottomTabNavigator();
 
@@ -45,7 +46,9 @@ const BottomTab: FC = () => {
           tabBarIcon: () => {
             return (
               <TouchableOpacity
-                onPress={() => {}}
+                onPress={() => {
+                  navigate('PickReelScreen');
+                }}
                 activeOpacity={0.5}
                 style={bottomBarStyles.customMiddleButton}>
                 <Image
