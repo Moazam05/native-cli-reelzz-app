@@ -2,10 +2,11 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React, {FC} from 'react';
 import HomeScreen from '../screens/dashboard/HomeScreen';
 import ProfileScreen from '../screens/dashboard/ProfileScreen';
-import {Platform} from 'react-native';
+import {Image, Platform, TouchableOpacity} from 'react-native';
 import {RFValue} from 'react-native-responsive-fontsize';
 import {Colors} from '../constants/Colors';
 import {HomeTabIcon, ProfileTabIcon} from './TabIcon';
+import {bottomBarStyles} from '../styles/NavigationBarStyles';
 
 const Tab = createBottomTabNavigator();
 
@@ -37,7 +38,30 @@ const BottomTab: FC = () => {
         },
       })}>
       <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Post" component={HomeScreen} />
+      <Tab.Screen
+        name="Post"
+        component={HomeScreen}
+        options={{
+          tabBarIcon: () => {
+            return (
+              <TouchableOpacity
+                onPress={() => {}}
+                activeOpacity={0.5}
+                style={bottomBarStyles.customMiddleButton}>
+                <Image
+                  source={require('../assets/icons/add.png')}
+                  style={bottomBarStyles.tabIcon}
+                />
+              </TouchableOpacity>
+            );
+          },
+        }}
+        listeners={{
+          tabPress: e => {
+            e.preventDefault();
+          },
+        }}
+      />
       <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
   );
