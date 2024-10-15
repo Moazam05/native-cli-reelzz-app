@@ -1,4 +1,4 @@
-import {View, Text, Animated, StyleSheet} from 'react-native';
+import {View, Animated, StyleSheet} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {Colors} from '../../constants/Colors';
 import Logo from '../../assets/images/logo_t.png';
@@ -48,7 +48,7 @@ const SplashScreen = () => {
         />
 
         <CustomText variant="h3" fontFamily={FONTS.Reelz}>
-          Reelzzz
+          Reelzz
         </CustomText>
       </View>
     </View>
