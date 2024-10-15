@@ -2,6 +2,8 @@ import {View, Text, Animated, StyleSheet} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {Colors} from '../../constants/Colors';
 import Logo from '../../assets/images/logo_t.png';
+import CustomText from '../../components/global/CustomText';
+import {FONTS} from '../../constants/Fonts';
 
 const SplashScreen = () => {
   const [isStop, setIsStop] = useState(false);
@@ -44,6 +46,10 @@ const SplashScreen = () => {
             transform: [{scale}],
           }}
         />
+
+        <CustomText variant="h3" fontFamily={FONTS.Reelz}>
+          Reelzzz
+        </CustomText>
       </View>
     </View>
   );
