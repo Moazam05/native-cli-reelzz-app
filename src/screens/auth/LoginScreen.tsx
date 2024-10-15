@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {RFValue} from 'react-native-responsive-fontsize';
 import CustomSafeAreaView from '../../components/global/CustomSafeAreaView';
@@ -8,8 +8,14 @@ import LinearGradient from 'react-native-linear-gradient';
 import {Colors} from '../../constants/Colors';
 import {FONTS} from '../../constants/Fonts';
 import CustomText from '../../components/global/CustomText';
+import SocialButtonHorizontal from '../../components/global/SocialButtonHorizontal';
+import GoogleIcon from '../../assets/icons/google.png';
+import {useAppDispatch} from '../../redux/reduxHook';
+import {signInWithGoogle} from '../../redux/SocialLogin';
 
 const LoginScreen = () => {
+  const dispatch = useAppDispatch();
+
   return (
     <CustomSafeAreaView style={styles.container}>
       <View style={styles.lottieContainer}>
@@ -37,6 +43,20 @@ const LoginScreen = () => {
       <CustomText variant="h6" fontFamily={FONTS.Medium} style={styles.tagline}>
         Rewarding Every Moment for Creators and Viewers.
       </CustomText>
+
+      <SocialButtonHorizontal
+        icon={<Image source={GoogleIcon} style={styles.gimg} />}
+        onPress={async () => await dispatch(signInWithGoogle())}
+        text="Continue with Google"
+        textColor="#000"
+        backgroundColor={Colors.white}
+      />
+
+      <TouchableOpacity style={styles.footerText}>
+        <CustomText variant="h8" fontFamily={FONTS.Medium}>
+          Designed and developed by - Salman Muazam
+        </CustomText>
+      </TouchableOpacity>
     </CustomSafeAreaView>
   );
 };
