@@ -15,6 +15,28 @@ const LoginScreen = () => {
       <View style={styles.lottieContainer}>
         <Lottie source={Animation} autoPlay loop style={styles.lottie} />
       </View>
+
+      <View style={styles.titleContainer}>
+        <LinearGradient
+          colors={[`rgba(0,0,0,0)`, Colors.text, `rgba(0,0,0,0)`]}
+          style={styles.linearGradient}
+          start={{x: 0, y: 0.5}}
+          end={{x: 1, y: 0.5}}
+        />
+        <CustomText variant="h2" fontFamily={FONTS.Reelz}>
+          Reelzzz
+        </CustomText>
+        <LinearGradient
+          colors={[`rgba(0,0,0,0)`, Colors.text, `rgba(0,0,0,0)`]}
+          style={styles.linearGradient}
+          start={{x: 0, y: 0.5}}
+          end={{x: 1, y: 0.5}}
+        />
+      </View>
+
+      <CustomText variant="h6" fontFamily={FONTS.Medium} style={styles.tagline}>
+        Rewarding Every Moment for Creators and Viewers.
+      </CustomText>
     </CustomSafeAreaView>
   );
 };
